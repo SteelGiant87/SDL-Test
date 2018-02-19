@@ -2,10 +2,17 @@
 //
 
 #include "stdafx.h"
+#include <iostream>
+#include <SDL.h>
 
-
-int main()
+int main(int argc, char *argv[])
 {
-    return 0;
-}
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+		std::cout << "SDL initialization failed. SDL Error: " << SDL_GetError();
+	} else {
+		std::cout << "SDL initialization succeeded!";
+	}
 
+	std::cin.get();
+	return 0;
+}
